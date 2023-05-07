@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator</title>
+    <style type="text/css">
+         
+    </style>
+</head>
+<body>
+    <video  id="video" autoplay preload="auto" src=""></video>
+    <a href="javascript:void(0)" onclick="go()">SNAP</a>
+    <script>
+        let video = document.getElementById('video');
+        if(navigator.mediaDevices.getUserMedia){
+            navigator.mediaDevices.getUserMedia({video:true}).then((value)=>{
+               video.srcObject = value;
+            }).catch((error)=>{
+                console.log(error);
+            })
+        }else{
+
+        }
+            
+        
+    </script>
+</body>
+</html>
+<!-- 
+let video = document.getElementById('video');
+if(navigator.mediaDevices.getUserMedia){
+     navigator.mediaDevices.getUserMedia({video:true}).then((s)=>{
+         video.srcObject = s;
+     }).catch((error)=>{alert(error)});
+}else{
+    console.log('no');
+} -->
